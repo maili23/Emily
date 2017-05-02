@@ -4,17 +4,46 @@
     <title>Emily</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <h1>Welcome to Bike Berlin</h1>
-    <h2>Your source No. 1 for used bikes in Berlin</h2>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="header-bike-left">
+            <a href="../static_pages/index"><span class="glyphicon glyphicon-home"></span>Bike Berlin | Home</a>
+          </div>
+        </div> <!-- navbar-header ends here -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../static_pages/about">About</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="../static_pages/contact">Contact</a></li>
+            <li><a href="#">Service</a></li>
+          </ul>
+        </div> <!-- navbar-collapse ends here -->
+      </div> <!-- nav container-fluid ends here -->
+    </nav> <!-- navbar ends here -->
+
+    <div class="container" >
+      <h1 class="header1">Welcome to Bike Berlin</h1>
+      <h2>Your source No. 1 for used bikes in Berlin</h2>
+    </div>      
 
     <%= yield %>
 
-    <footer>
+    <footer class="container" >
       <p></p>
     	&copy; 2017 Maik Lindner
     </footer>

@@ -1,3 +1,40 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+	font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande";
+	color: #757575;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+}
+
+
+/* Navigation bar */
+
+.navbar {
+	background-image: linear-gradient(270deg,transparent,#4f5b66);
+}
+
+.header-bike-left>a {
+	color: #9d9d9d;
+}
+
+.header-bike-left>a>span {
+	padding: 15px;
+	color: #9d9d9d;
+}
+
+
+
+
+.header1 {
+	margin-top: 55px; 
+	color: #4A90E2;
+	font-weight: 200;
+	font-stretch: normal;
+	font-size: 42px;
+}
