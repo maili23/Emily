@@ -29,20 +29,9 @@
   </tbody>
 </table> -->
 
-<%= @test_variable %>
-
 <div class="container">
     <div class="row">
-      <% @products.each do |product| %>
-        <div class="col-sm-2 col-md-4">
-          <a href="#"><h1><%= product.name %></h1></a>
-          <%= image_tag(product.image_url, class: "img-responsive") %>
-          <p><%= product.description %></p>
-          <p><%= product.color %></p>
-          <p><%= product.price %></p>
-          <p><%= link_to 'Show', product %> <%= link_to 'Edit', edit_product_path(product) %> <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div><!-- /col -->
-      <% end %>
+      <%= render @products %>
     </div>    
   </div>
 
