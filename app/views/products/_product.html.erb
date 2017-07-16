@@ -1,41 +1,15 @@
-<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 product-section">
-  <!-- product image -->
-  <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+<!-- Project -->
+<div class="row">
+  <div class="col-md-7">
     <%= image_tag(product.image_url, class: "img-responsive") %>
   </div>
-  <!-- product information -->
-  <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
-    <!-- Name -->
-    <div class="row">
-      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <a href="#"><h1><%= product.name %> | <%= product.description %></h1></a>
-      </div>
-    </div>
-    <!-- Description -->
-    <div class="row">
-      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <p class="product-description"><%= product.description %></p>
-      </div>
-    </div>
-    <!-- Color -->
-    <div class="row">
-      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <p class="product-color"><%= product.color %></p>
-      </div>
-    </div>
-    <!-- Price -->
-    <div class="row">
-      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <p class="product-price"><%= product.price %></p>
-      </div>
-    </div>
+  <div class="col-md-5">
+    <h3><%= product.name %></h3>
+    <h4><%= product.price %></h4>
+    <p><%= product.description %></p>
+    <%= link_to "Find out more", product, :class => 'btn btn-default' %><%= link_to 'Edit', edit_product_path(product), :class => 'btn btn-default' %><%= link_to 'Remove', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' %>
   </div>
-  <!-- Product Editing -->
-  <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
-    <div class="row">
-      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <span><%= link_to 'Show', product %> <%= link_to 'Edit', edit_product_path(product) %> <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-      </div>              
-    </div>
-  </div>
-</div><!-- /col -->
+</div>
+<!-- /.row -->
+
+<hr>
