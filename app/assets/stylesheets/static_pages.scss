@@ -9,7 +9,9 @@
 }
 
 body {
+	font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande";
 	position: relative;
+	text-align: center;
 }
 
 
@@ -36,4 +38,22 @@ body {
 	color: #4A90E2;
 	font-weight: 200;
 	font-stretch: normal;
+}
+
+.carousel-caption {
+	bottom: 10px;
+	color: #757575;
+	text-align: center;
+}
+
+.carousel-control {
+	width: 5%;
+}
+
+
+
+/* Product Page */
+
+.product-section {
+	padding: 15px;
 }
