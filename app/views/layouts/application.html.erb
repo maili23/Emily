@@ -4,11 +4,12 @@
     <title>Emily</title>
     <%= csrf_meta_tags %>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   </head>
 
   <body>
@@ -33,6 +34,15 @@
             <li><%= link_to 'Contact', static_pages_contact_path %></li>
             <li><a href="#">Service</a></li>
             <li><%= link_to 'MaiksBlog', "https://maiksblog.herokuapp.com", :target => "_blank" %></li>
+
+            <!-- Search Box -->
+            <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %> 
+              <div class="form-group">
+                <%= label_tag(:q, "Search for:", class:"hidden") %>
+                <%= text_field_tag(:q, "", type:"text", class:"form-control", placeholder:"Search") %>
+              </div>
+            <%= submit_tag("Search", class:"btn btn-default") %>
+            <% end %>
           </ul>
         </div> <!-- navbar-collapse ends here -->
       </div> <!-- nav container-fluid ends here -->
