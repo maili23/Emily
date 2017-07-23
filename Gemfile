@@ -57,3 +57,5 @@ group :production do
   gem 'pg'
 end
 
+# Devise can do many things, but at its core it provides you with the ability to authenticate a user in your app using the register, sign in, and sign out functions.
+gem 'devise'
