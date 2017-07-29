@@ -34,6 +34,15 @@
             <li><a href="#">Service</a></li>
             <li><%= link_to 'MaiksBlog', "https://maiksblog.herokuapp.com", :target => "_blank" %></li>
 
+            <!-- Authentication Button -->
+            <li>
+              <% if user_signed_in? %>
+               <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <% else %>
+                <%= link_to('Login', new_user_session_path) %>
+              <% end %>
+            </li>
+
             <!-- Search Box -->
             <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %> 
               <div class="form-group">
@@ -43,14 +52,6 @@
             <%= submit_tag("Search", class:"btn btn-default") %>
             <% end %>
 
-            <!-- Authentication Button -->
-            <li>
-              <% if user_signed_in? %>
-               <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-              <% else %>
-                <%= link_to('Login', new_user_session_path) %>
-              <% end %>
-            </li>
           </ul>
         </div> <!-- navbar-collapse ends here -->
       </div> <!-- nav container-fluid ends here -->
