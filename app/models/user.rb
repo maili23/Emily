@@ -4,4 +4,5 @@ class User < ActiveRecord::Base #ApplicationRecord was originally written
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :orders
+	has_many :comments
 end
