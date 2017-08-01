@@ -7,13 +7,17 @@
       <%= f.text_area :body %>
     </p>
 
-    <p>
-      <%= f.label :rating %><br>
-      <%= f.text_field :rating, class: "rating" %>
-    </p>
+    
+    <div class="rating">
+      <p>
+        <%= f.label :rating %><br>
+        <%= f.text_field :rating %>
+      </p>
+    </div>
+    
 
     <p>
-    	<%= f.submit "Submit" %>
+      <%= f.submit "Submit", class: "btn btn-default btn-xs" %>
     </p>
   <% end %>
 <% end %>

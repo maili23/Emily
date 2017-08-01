@@ -29,5 +29,9 @@
 
 <%= render "new_comment" %>
 
-<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default" %>
-<%= link_to 'Back', products_path, class: "btn btn-default" %>
+<%= render "comments" %>
+<br />
+<hr>
+
+<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default btn-xs" %>
+<%= link_to 'Back', products_path, class: "btn btn-default btn-xs" %>
