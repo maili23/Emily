@@ -63,7 +63,4 @@ gem 'devise'
 # CanCanCan
 gem 'cancancan', '~> 2.0'
 
-# Raty
-gem 'jquery-raty-rails'
-
 
