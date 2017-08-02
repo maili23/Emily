@@ -25,11 +25,12 @@
 	<%= @product.price %>
 </p>
 
-<p><%= @product.highest_rating_comment %></p>
+<p><%= @product.highest_rating_comment.body %></p>
 
 <%= render "new_comment" %>
 
 <%= render "comments" %>
+
 <br />
 <hr>
 
