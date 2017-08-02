@@ -63,4 +63,3 @@ gem 'devise'
 # CanCanCan
 gem 'cancancan', '~> 2.0'
 
-
