@@ -25,5 +25,16 @@
 	<%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<p><%= @product.highest_rating_comment.body %></p>
+
+<hr>
+
+<%= render "new_comment" %>
+
+<%= render "comments" %>
+
+<br />
+<hr>
+
+<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default btn-xs" %>
+<%= link_to 'Back', products_path, class: "btn btn-default btn-xs" %>
