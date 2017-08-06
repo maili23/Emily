@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+	validates :name, presence: true
 	has_many :order
 	has_many :comments
 

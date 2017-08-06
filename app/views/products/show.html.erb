@@ -25,7 +25,9 @@
 	<%= @product.price %>
 </p>
 
-<p><%= @product.highest_rating_comment.body %></p>
+<% if @product.highest_rating_comment %>
+  <p><%= @product.highest_rating_comment.body %></p>
+<% end %>
 
 <hr>
 
