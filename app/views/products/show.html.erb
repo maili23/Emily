@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p id="notice" class="alert alert-warning"><%= notice %></p>
+<% end %>
+
+<% if alert %>
+  <p id="alert" class="alert alert-danger"><%= alert %></p>
+<% end %>
 
 <p>
   <strong>Name:</strong>
@@ -34,6 +40,8 @@
 <%= render "new_comment" %>
 
 <%= render "comments" %>
+
+<%= will_paginate @comments, :page_links => false, class: "btn btn-default btn-xs" %>
 
 <br />
 <hr>
