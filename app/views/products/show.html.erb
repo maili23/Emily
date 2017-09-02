@@ -31,6 +31,8 @@
 	<%= @product.price %>
 </p>
 
+<p>Average Rating: <%= @product.average_rating %></p>
+
 <% if @product.highest_rating_comment %>
   <p><%= @product.highest_rating_comment.body %></p>
 <% end %>
