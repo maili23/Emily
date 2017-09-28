@@ -217,7 +217,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (~> 4.0)
   jbuilder (~> 2.5)
-  jquery-rails
+  jquery-rails (~> 4.1, >= 4.1.1)
   listen (~> 3.0.5)
   pg
   puma (~> 3.0)
