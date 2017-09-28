@@ -1,4 +1,11 @@
 $(document).on('turbolinks:load', function(){
+	$('.img-zoom').elevateZoom({
+		zoomType: "lens",
+		lensShape: "round",
+		lensSize: 200,
+
+	});
+
 	$('.rating').raty({
 		starHalf: '<%= asset_path 'star-half.png' %>',
 		starOff: '<%= asset_path 'star-off.png' %>',
