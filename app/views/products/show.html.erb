@@ -36,7 +36,7 @@
 <% end %>
 
 
-<p>Average Rating: <%= @product.average_rating %></p>
+<p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div></p>
 
 <% if @product.highest_rating_comment %>
   <p><%= @product.highest_rating_comment.body %></p>
