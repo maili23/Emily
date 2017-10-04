@@ -6,10 +6,11 @@
   <p id="alert" class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-<p>
+<% cache @product do %>
+<h2>
   <strong>Name:</strong>
   <%= @product.name %>
-</p>
+</h2>
 
 <p>
   <strong>Description:</strong>
@@ -30,6 +31,8 @@
 	<strong>Price:</strong>
 	<%= @product.price %>
 </p>
+<% end %>
+
 <%= form_with(url: '/payments/create') do |form| %>
   <%= render partial: "shared/stripe_checkout_button" %>
   <%= hidden_field_tag(:product_id, @product.id) %>

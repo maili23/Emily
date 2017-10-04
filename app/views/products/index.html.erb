@@ -10,8 +10,9 @@
     </div>
 </div>
 
-<%= render @products %>
-
+<% cache(cache_key_for_products) do %>
+	<%= render @products %>
+<% end %>
 
 <br>
 
