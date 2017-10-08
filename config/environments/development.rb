@@ -55,5 +55,7 @@ Rails.application.configure do
   #Settings for devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
+  config.app_generators.javascript_engine = :javascript
+
 
 end
