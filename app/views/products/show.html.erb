@@ -7,60 +7,67 @@
 <% end %>
 
 <% cache @product do %>
-<h2>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<div class="container">
+  <div class="row" data-product-id ="<% @product.id%>">
+    <div class="col-md-12 col-lg-12 col-xs-12"
+      <h2>
+        <strong>Name:</strong>
+        <%= @product.name %>
+      </h2>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @product.description %>
+      </p>
 
-<p>
-	<strong>Color:</strong>
-	<%= @product.color %>
-</p>
+      <p>
+        <strong>Image url:</strong>
+        <%= @product.image_url %>
+      </p>
 
-<p>
-	<strong>Price:</strong>
-	<%= @product.price %>
-</p>
-<% end %>
+      <p>
+      	<strong>Color:</strong>
+      	<%= @product.color %>
+      </p>
 
-<%= form_with(url: '/payments/create') do |form| %>
-  <%= render partial: "shared/stripe_checkout_button" %>
-  <%= hidden_field_tag(:product_id, @product.id) %>
-<% end %>
+      <p>
+      	<strong>Price:</strong>
+      	<%= @product.price %>
+      </p>
+      <% end %>
+
+      <%= form_with(url: '/payments/create') do |form| %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+      <% end %>
 
 
-<p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div></p>
+      <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div></p>
 
-<% if @product.highest_rating_comment %>
-  <p><%= @product.highest_rating_comment.body %></p>
-<% end %>
+      <% if @product.highest_rating_comment %>
+        <p><%= @product.highest_rating_comment.body %></p>
+      <% end %>
 
-<hr>
+      <hr>
 
-<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-<%= render "new_comment" %>
+      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+      <%= render "new_comment" %>
 
-<%= render "comments" %>
+      <%= render "comments" %>
 
-<%= will_paginate @comments, :page_links => false, class: "btn btn-default btn-xs" %>
+      <%= will_paginate @comments, :page_links => false, class: "btn btn-default btn-xs" %>
 
-<h6>
-  Views:
-  <span class="badge"><%= @product.views %></span>
-</h6>
+      <h6>
+        Views:
+        <span class="badge"><%= @product.views %></span>
+      </h6>
 
-<br />
-<hr>
+      <br />
+      <hr>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default btn-xs" %>
 <%= link_to 'Back', products_path, class: "btn btn-default btn-xs" %>
