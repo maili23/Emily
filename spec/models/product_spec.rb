@@ -4,8 +4,9 @@ describe Product do
 
 	context "when the product has comments" do
 		
-		let(:product) { Product.create!(name: "Custom style") }
-		let(:user) { User.create!(email: "maili23@web.de", password: "password") }
+		let(:product) { Product.create!(name: "Custom style", description: "nice bike", color: "unique", price: "4000") }
+		# let(:user) { User.create!(email: "maili23@web.de", password: "password") }
+		user = FactoryGirl.build(:user)
 
 		before do
 			product.comments.create!(rating: 1, user: user, body: "I/'ve seen better bikes!")
@@ -15,6 +16,14 @@ describe Product do
 
 		it "returns the average rating of all comments" do
 			expect(product.average_rating).to eq 3
+		end
+
+		it "returns the lowest rating comment" do
+			expect(product.lowest_rating_comment.rating).to eq 1
+		end
+
+		it "returns the highest rating comment" do
+			expect(product.highest_rating_comment.rating).to eq 5
 		end
 
 		it "is not valid without a name" do

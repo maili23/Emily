@@ -1,5 +1,8 @@
 class Product < ApplicationRecord
 	validates :name, presence: true
+	validates :description, presence: true
+	validates :color, presence: true
+	validates :price, presence: true
 	has_many :order
 	has_many :comments
 
@@ -9,6 +12,10 @@ class Product < ApplicationRecord
 
 	def highest_rating_comment
   	comments.rating_desc.first
+	end
+
+	def lowest_rating_comment
+		comments.rating_desc.last
 	end
 
 	def average_rating
