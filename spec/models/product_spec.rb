@@ -30,4 +30,25 @@ describe Product do
 			expect(Product.new(description: "Nice bike")).not_to be_valid
 		end
 	end
+
+	context "when the product has no views" do
+    product = FactoryGirl.build(:product)
+
+    before do
+      $redis.del(product.id)
+    end
+
+    it "hits returns 0" do
+      expect(product.hits).to eq 0
+    end
+
+    it "first view gives 1 hits" do
+      expect(product.hit_it).to eq "OK"
+      expect(product.hits).to eq 1
+    end
+  end
+
+
+
+
 end
